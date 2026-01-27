@@ -3,285 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Jotta | Barbearia Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Studio Jotta | Estúdio de Imagem Masculina</title>
+    <meta name="description" content="Mais que uma barbearia. O Studio Jotta é especialista em visagismo, prótese capilar e estética masculina em um ambiente premium.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <style>
-        /* --- RESET E ESTILOS GERAIS --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0a0a0a; /* Preto Profundo */
-            color: #f5f5f5;
-            line-height: 1.6;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
-        /* Variáveis de Cor */
-        :root {
-            --gold: #d4af37; /* Dourado Clássico */
-            --dark-grey: #1c1c1c;
-            --light-grey: #b3b3b3;
-        }
-
-        /* --- HEADER --- */
-        header {
-            background-color: rgba(10, 10, 10, 0.95);
-            padding: 20px 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--gold);
-            text-transform: uppercase;
-        }
-
-        nav ul { display: flex; gap: 30px; }
-        nav a:hover { color: var(--gold); }
-
-        .btn-cta {
-            background-color: var(--gold);
-            color: #000;
-            padding: 10px 25px;
-            font-weight: bold;
-            border-radius: 5px;
-            text-transform: uppercase;
-        }
-        .btn-cta:hover { background-color: #fff; }
-
-        /* --- HERO SECTION (CAPA) --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .hero span { color: var(--gold); }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--light-grey);
-        }
-
-        /* --- SEÇÕES GERAIS --- */
-        section { padding: 80px 10%; }
-        
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold);
-            margin: 10px auto 0;
-        }
-
-        /* --- GALERIA DE TRABALHOS --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            height: 300px;
-            border-radius: 4px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img { transform: scale(1.1); }
-
-        /* --- O LOCAL --- */
-        .local-section { background-color: var(--dark-grey); }
-        
-        .local-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .local-text { flex: 1; min-width: 300px; }
-        .local-img { flex: 1; min-width: 300px; }
-        .local-img img { width: 100%; border-radius: 5px; border: 2px solid var(--gold); }
-
-        /* --- CONTATO E RODAPÉ --- */
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .contact-info h3 { color: var(--gold); margin-bottom: 20px; }
-        .contact-item { display: flex; align-items: center; margin-bottom: 15px; font-size: 1.1rem; }
-        .contact-item i { color: var(--gold); margin-right: 15px; font-size: 1.2rem; }
-
-        .social-links { margin-top: 30px; }
-        .social-links a {
-            font-size: 1.5rem;
-            margin-right: 20px;
-            color: #fff;
-        }
-        .social-links a:hover { color: var(--gold); }
-
-        footer {
-            background-color: #000;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #222;
-        }
-
-        /* --- RESPONSIVO --- */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav ul { gap: 15px; font-size: 0.9rem; }
-            .hero h1 { font-size: 2.5rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">Studio<span style="color:#fff;">Jotta</span></div>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#portfolio">Trabalhos</a></li>
-                <li><a href="#local">O Studio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <a href="https://wa.me/5511999999999" class="btn-cta">Agendar <i class="fab fa-whatsapp"></i></a>
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="assets/images/logo-white.png" alt="Studio Jotta Logo" class="header-logo">
+            </div>
+            <nav>
+                <a href="#contato" class="btn-gold-small">Agendar Horário</a>
+            </nav>
+        </div>
     </header>
 
     <section id="home" class="hero">
-        <h1>Estilo & <span style="color:var(--gold)">Tradição</span></h1>
-        <p>Mais que um corte, uma experiência de cavalheiros.</p>
-        <a href="#portfolio" style="border: 2px solid var(--gold); padding: 10px 30px; margin-top: 20px; color: var(--gold); font-weight: bold;">VER PORTFÓLIO</a>
-    </section>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <img src="assets/images/logo-white.png" alt="Studio Jotta" class="hero-main-logo">
+            
+            <h1>Sua imagem define seu próximo nível.</h1>
+            <p class="hero-subtitle">Barbearia • Visagismo • Prótese Capilar • Estética</p>
+            <p class="hero-text">Experiência premium e estratégia para homens que não aceitam o básico.</p>
+            
+            <div class="cta-group-main">
+                <a href="LINK_DO_WHATSAPP_AQUI" target="_blank" class="btn-gold-large pulse-effect">👉 Agendar no WhatsApp</a>
+                <a href="#diferenciais" class="btn-outline-white">Conhecer o Estúdio</a>
+            </div>
 
-    <section id="portfolio">
-        <h2>Nossos Cortes</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corte Degrade">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Barba">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corte Tesoura">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1503951914875-befbb7470d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Estilo">
+            <div class="cta-group-secondary">
+               <div class="secondary-link-item">
+                   <span>Quer fazer parte do time?</span>
+                   <a href="#profissional">Vagas para Barbeiros <i class="fas fa-arrow-right"></i></a>
+               </div>
+               <div class="secondary-link-item">
+                   <span>Deseja empreender?</span>
+                   <a href="#profissional">Workshop de Negócios <i class="fas fa-arrow-right"></i></a>
+               </div>
             </div>
         </div>
     </section>
 
-    <section id="local" class="local-section">
-        <h2>O Ambiente</h2>
-        <div class="local-content">
-            <div class="local-text">
-                <h3>Conforto e Resenha</h3>
-                <p>No Studio Jotta, cada detalhe foi pensado para o seu conforto. Ambiente climatizado, cerveja gelada, música boa e a melhor resenha da cidade.</p>
-                <br>
-                <p>Equipamentos de última geração e toalha quente para o barbear clássico que você respeita.</p>
-                <br>
-                <ul>
-                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Wi-Fi Gratuito</li>
-                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Estacionamento Próprio</li>
-                    <li><i class="fas fa-check" style="color:var(--gold)"></i> Bar Exclusivo</li>
-                </ul>
-            </div>
-            <div class="local-img">
-                <img src="https://images.unsplash.com/photo-1512690459411-b9245aed6191?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Interior da Barbearia">
+    <section id="diferenciais" class="section-pad">
+        <div class="container">
+            <div class="grid-4">
+                <div class="diferencial-box">
+                    <i class="fas fa-cut gold-icon"></i>
+                    <h3>Barbearia Premium</h3>
+                    <p>Técnica apurada em cortes clássicos e modernos.</p>
+                </div>
+                <div class="diferencial-box">
+                    <i class="fas fa-brain gold-icon"></i>
+                    <h3>Visagismo Masculino</h3>
+                    <p>Cortes planejados estrategicamente para o seu formato de rosto.</p>
+                </div>
+                <div class="diferencial-box">
+                    <i class="fas fa-user-tie gold-icon"></i>
+                    <h3>Prótese Capilar</h3>
+                    <p>Soluções de alta naturalidade para recuperar sua autoestima.</p>
+                </div>
+                <div class="diferencial-box">
+                    <i class="fas fa-spa gold-icon"></i>
+                    <h3>Estética & Cuidado</h3>
+                    <p>Barboterapia e tratamentos faciais em ambiente relaxante.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contato">
-        <h2>Onde Estamos</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Horário de Atendimento</h3>
-                <p>Segunda a Sexta: 09h às 20h</p>
-                <p>Sábado: 09h às 18h</p>
-                <br>
-                <h3>Contatos</h3>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i> (11) 99999-8888
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i> Rua das Navalhas, 123 - Centro, SP
-                </div>
+    <section id="sobre" class="section-pad section-darker">
+        <div class="container split-layout inverse-mobile">
+            <div class="split-text">
+                <h4 class="gold-subtitle">SOBRE O FUNDADOR</h4>
+                <h2>A mente por trás do Studio Jotta.</h2>
                 
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                <p><strong>João Vitor</strong> iniciou sua trajetória em 2017. Após experiências no mercado e o aprendizado prático com seu primeiro empreendimento, a Barbearia do Jota, ele retornou com uma visão estratégica renovada.</p>
+                
+                <p>Em apenas 9 meses, consolidou o <strong>Studio Jotta</strong>: um reflexo de sua evolução profissional, unindo técnica de excelência, gestão padronizada e propósito. Sua missão é provar que cuidar da imagem masculina é investir em confiança e identidade.</p>
+
+                <a href="#servicos" class="btn-outline-gold mt-20">Ver nossos serviços</a>
+            </div>
+            <div class="split-image">
+                <img src="https://via.placeholder.com/600x700.png?text=Foto+do+Fundador+João+Vitor" alt="João Vitor Fundador Studio Jotta">
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="section-pad">
+        <div class="container text-center">
+            <h4 class="gold-subtitle">O QUE OFERECEMOS</h4>
+            <h2>Serviços de Alto Padrão</h2>
+            <div class="grid-3 mt-40">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://via.placeholder.com/400x300.png?text=Corte+e+Visagismo');"></div>
+                    <div class="service-info">
+                        <h3>Corte & Visagismo</h3>
+                        <p>Muito além da tesoura. Uma consultoria para alinhar seu cabelo aos seus objetivos de imagem.</p>
+                    </div>
                 </div>
+                <div class="service-card featured-service"> <div class="badge-gold">Destaque</div>
+                    <div class="service-img" style="background-image: url('https://via.placeholder.com/400x300.png?text=Prótese+Capilar');"></div>
+                    <div class="service-info">
+                        <h3>Prótese Capilar</h3>
+                        <p>Especialidade da casa. Resultado imperceptível que devolve a juventude e confiança em horas.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://via.placeholder.com/400x300.png?text=Barboterapia');"></div>
+                    <div class="service-info">
+                        <h3>Barba & Terapia</h3>
+                        <p>O ritual clássico com toalha quente, vapor e produtos de primeira linha para relaxamento total.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-40">
+                 <a href="LINK_DO_WHATSAPP_AQUI" class="btn-gold-large">Consultar Valores e Agendar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="section-pad section-darker text-center">
+        <div class="container">
+             <h4 class="gold-subtitle">O AMBIENTE</h4>
+            <h2>Não é só um corte, é o seu momento.</h2>
+            <p class="max-width-600 mc-auto mb-40">Cada detalhe do nosso espaço foi pensado para proporcionar conforto, confiança e uma experiência consistente.</p>
+
+            <div class="amenities-grid">
+                <div class="amenity-item"><i class="fas fa-beer"></i> Bar Exclusivo</div>
+                <div class="amenity-item"><i class="fas fa-wifi"></i> Wi-Fi Alta Velocidade</div>
+                <div class="amenity-item"><i class="fas fa-snowflake"></i> Ambiente Climatizado</div>
+                <div class="amenity-item"><i class="fas fa-car"></i> Estacionamento Fácil</div>
+                <div class="amenity-item"><i class="fas fa-music"></i> Playlist Curada</div>
+                <div class="amenity-item"><i class="fas fa-coffee"></i> Café Premium</div>
             </div>
             
-            <div style="flex: 1; min-width: 300px; height: 300px; background: #222; display: flex; align-items: center; justify-content: center; border: 1px solid #444;">
-                <p style="color: #666;">[Mapa do Google Maps Integrado Aqui]</p>
+            <div class="studio-photo mt-40">
+                <img src="https://via.placeholder.com/1200x500.png?text=Foto+Panorâmica+do+Ambiente+Premium" alt="Ambiente Studio Jotta">
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Studio Jotta. Todos os direitos reservados.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px;">Desenvolvido por Consultoria Tech</p>
+    <section id="profissional" class="section-pad section-professional">
+        <div class="container">
+            <div class="text-center mb-40">
+                <h2>Visão Empreendedora & Crescimento</h2>
+                <p>Área dedicada a profissionais que desejam elevar o nível.</p>
+            </div>
+            <div class="grid-2 grid-gap-large">
+                <div class="prof-box">
+                    <h3><i class="fas fa-briefcase gold-icon"></i> Trabalhe Conosco</h3>
+                    <p>Em breve abriremos vagas para barbeiros que queiram crescer junto com a estrutura padronizada do Studio Jotta e sair da média.</p>
+                    <a href="LINK_FORMULARIO_OU_WHATSAPP_VAGA" class="btn-outline-gold full-width">Entrar na Lista de Espera (Vaga)</a>
+                </div>
+                <div class="prof-box highlight-box">
+                    <h3><i class="fas fa-rocket gold-icon"></i> Workshop de Negócios</h3>
+                    <p><strong>Previsto para Maio.</strong> Empreendedorismo e visão estratégica para barbeiros e pessoas que desejam sair do CLT e construir um negócio sólido.</p>
+                    <a href="LINK_FORMULARIO_PRE_CADASTRO" class="btn-gold-large full-width">Fazer Pré-Cadastro do Workshop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container footer-content grid-3">
+            <div class="footer-col">
+                <img src="assets/images/logo-white.png" alt="Studio Jotta" class="footer-logo">
+                <p>Estúdio de imagem masculina focado em excelência, naturalidade e profissionalismo.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato & Endereço</h4>
+                <p><i class="fab fa-whatsapp gold-icon mr-10"></i> (XX) 9XXXX-XXXX</p>
+                <p><i class="fas fa-map-marker-alt gold-icon mr-10"></i> Rua Exemplo, 123 - Bairro, Cidade - UF</p>
+            </div>
+            <div class="footer-col">
+                <h4>Horários</h4>
+                <p>Segunda a Sexta: 09h às 20h</p>
+                <p>Sábado: 09h às 18h</p>
+                <div class="social-links mt-20">
+                    <a href="LINK_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2026 Studio Jotta. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
+    <a href="LINK_DO_WHATSAPP_AQUI" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
